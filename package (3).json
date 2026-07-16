@@ -1,0 +1,11 @@
+{
+  "name": "portal-imperial-pos",
+  "version": "1.0.0",
+  "description": "Sistema POS Portal Imperial - Comida China (WALLACE COMPANY SYSTEM)",
+  "scripts": {
+    "start": "npx serve -s . -l $PORT"
+  },
+  "dependencies": {
+    "serve": "^14.2.1"
+  }
+}
