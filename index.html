@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="theme-color" content="#1a0f0f">
+<meta name="theme-color" content="#faf6ee">
 <title>Portal Imperial · POS</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,25 +15,25 @@
    (evoca la caligrafía de la casa), cuerpo en Inter para legibilidad de POS.
    ========================================================================== */
 :root{
-  --tinta:        #140b0b;   /* fondo más oscuro */
-  --laca:         #1f1010;   /* fondo paneles */
-  --laca-2:       #2a1616;   /* superficies elevadas */
-  --laca-borde:   #3a2020;
+  --tinta:        #faf6ee;   /* fondo general (cremita suave) */
+  --laca:         #ffffff;   /* paneles/cards (blanco) */
+  --laca-2:       #fbf7f0;   /* superficies elevadas */
+  --laca-borde:   #e7ddc9;   /* bordes suaves */
   --rojo:         #9e1b1b;   /* rojo imperial */
   --rojo-vivo:    #c62828;
-  --oro:          #d4af37;   /* dorado imperial */
-  --oro-suave:    #e8cd7a;
+  --oro:          #b8901f;   /* dorado (un poco más oscuro para leerse sobre blanco) */
+  --oro-suave:    #9c7a1a;
   --crema:        #f3e9d8;
-  --texto:        #f4ece0;
-  --texto-2:      #c9b8a5;
-  --texto-3:      #8f7d6d;
-  --verde:        #3fa14a;
-  --verde-bg:     #14301a;
-  --amar:         #d9a520;
-  --amar-bg:      #3a2e0c;
-  --rojo-al:      #e5484d;
-  --rojo-bg:      #3a1414;
-  --sombra:       0 10px 30px rgba(0,0,0,.45);
+  --texto:        #2a2018;   /* texto principal oscuro */
+  --texto-2:      #6b5d4c;   /* texto secundario */
+  --texto-3:      #9a8b78;   /* texto tenue */
+  --verde:        #2e8b40;
+  --verde-bg:     #e4f4e7;
+  --amar:         #a9781a;
+  --amar-bg:      #f8eecd;
+  --rojo-al:      #c62828;
+  --rojo-bg:      #fbe3e3;
+  --sombra:       0 6px 20px rgba(90,60,20,.10);
   --radio:        14px;
   --radio-sm:     9px;
 }
@@ -42,8 +42,8 @@ html,body{ height:100%; }
 body{
   font-family:'Inter',system-ui,sans-serif;
   background:
-    radial-gradient(1200px 600px at 80% -10%, rgba(158,27,27,.18), transparent 60%),
-    radial-gradient(900px 500px at -10% 110%, rgba(212,175,55,.08), transparent 55%),
+    radial-gradient(1200px 600px at 80% -10%, rgba(158,27,27,.05), transparent 60%),
+    radial-gradient(900px 500px at -10% 110%, rgba(184,144,31,.06), transparent 55%),
     var(--tinta);
   color:var(--texto);
   -webkit-font-smoothing:antialiased;
@@ -84,12 +84,12 @@ small{ color:var(--texto-3); }
   -webkit-mask-composite:xor; mask-composite:exclude; pointer-events:none;
 }
 .login-logo{ width:110px; height:110px; object-fit:contain; margin-bottom:14px;
-  filter:drop-shadow(0 4px 12px rgba(0,0,0,.5)); }
+  filter:drop-shadow(0 4px 12px rgba(90,60,20,.18)); }
 .login-card h1{ font-family:'Noto Serif SC',serif; font-size:1.7rem; color:var(--oro); }
 .login-sub{ color:var(--texto-2); font-size:.9rem; margin:6px 0 22px; }
 .login-error{ color:var(--rojo-al); font-size:.86rem; min-height:20px; margin-top:10px; }
 .login-demo{ font-size:.72rem; color:var(--texto-3); margin-top:16px; line-height:1.6;
-  background:rgba(0,0,0,.25); padding:8px 10px; border-radius:8px; }
+  background:var(--laca-2); padding:8px 10px; border-radius:8px; border:1px solid var(--laca-borde); }
 .login-foot{ margin-top:18px; font-size:.7rem; color:var(--texto-3); letter-spacing:.5px; }
 
 /* ==========================================================================
@@ -142,11 +142,11 @@ button{ font-family:inherit; cursor:pointer; border:none; }
   display:flex; align-items:center; justify-content:space-between;
   padding:10px 20px; background:linear-gradient(180deg,var(--laca-2),var(--laca));
   border-bottom:1px solid var(--laca-borde); position:sticky; top:0; z-index:50;
-  box-shadow:0 2px 12px rgba(0,0,0,.3);
+  box-shadow:0 2px 12px rgba(90,60,20,.08);
 }
 .brand{ display:flex; align-items:center; gap:12px; }
 .brand-logo{ width:46px; height:46px; object-fit:contain;
-  filter:drop-shadow(0 2px 6px rgba(0,0,0,.5)); }
+  filter:drop-shadow(0 2px 6px rgba(90,60,20,.15)); }
 .brand-name{ font-family:'Noto Serif SC',serif; font-weight:900;
   font-size:1.15rem; color:var(--oro); line-height:1; }
 .brand-sub{ font-size:.72rem; color:var(--texto-3); margin-top:2px; }
@@ -154,10 +154,10 @@ button{ font-family:inherit; cursor:pointer; border:none; }
 .reloj{ font-variant-numeric:tabular-nums; font-weight:700; color:var(--oro-suave);
   font-size:1rem; letter-spacing:1px; }
 .caja-estado{ font-size:.8rem; font-weight:600; padding:5px 12px; border-radius:20px; }
-.caja-estado.abierta{ background:var(--verde-bg); color:#7fdc8a; border:1px solid #2c5c33; }
-.caja-estado.cerrada{ background:var(--rojo-bg); color:#f0a0a3; border:1px solid #5c2c2c; }
+.caja-estado.abierta{ background:var(--verde-bg); color:var(--verde); border:1px solid #b6e0bd; }
+.caja-estado.cerrada{ background:var(--rojo-bg); color:var(--rojo-al); border:1px solid #f0c0c0; }
 .badge-alerta{ background:var(--amar-bg); color:var(--amar); font-size:.78rem;
-  padding:5px 10px; border-radius:20px; border:1px solid #5c4a15; font-weight:600; }
+  padding:5px 10px; border-radius:20px; border:1px solid #e6d18a; font-weight:600; }
 .user-chip{ background:var(--laca); color:var(--texto-2); font-size:.8rem;
   padding:5px 12px; border-radius:20px; border:1px solid var(--laca-borde); font-weight:500; }
 
@@ -283,8 +283,8 @@ hr{ border:none; border-top:1px solid var(--laca-borde); margin:16px 0; }
   padding:12px 0; font-size:1.05rem; font-weight:700; }
 .tt-val{ color:var(--oro); font-size:1.3rem; font-variant-numeric:tabular-nums; }
 .ticket-acciones{ display:flex; flex-direction:column; gap:8px; }
-.chip-servida{ margin-top:10px; background:var(--verde-bg); color:#7fdc8a; font-size:.78rem;
-  padding:8px 10px; border-radius:8px; text-align:center; border:1px solid #2c5c33; }
+.chip-servida{ margin-top:10px; background:var(--verde-bg); color:var(--verde); font-size:.78rem;
+  padding:8px 10px; border-radius:8px; text-align:center; border:1px solid #b6e0bd; }
 
 /* ==========================================================================
    MODALES
@@ -307,7 +307,7 @@ hr{ border:none; border-top:1px solid var(--laca-borde); margin:16px 0; }
 .cobro-total{ background:var(--tinta); padding:12px; border-radius:8px; text-align:center;
   font-size:1.05rem; margin-bottom:14px; }
 .cobro-total b{ color:var(--oro); font-size:1.25rem; }
-.cobro-sec{ background:rgba(0,0,0,.2); border:1px solid var(--laca-borde);
+.cobro-sec{ background:var(--laca-2); border:1px solid var(--laca-borde);
   border-radius:var(--radio-sm); padding:12px; margin-bottom:12px; }
 .cobro-sec-tit{ font-size:.82rem; font-weight:700; color:var(--oro-suave); margin-bottom:8px; }
 .cobro-sec-tit small{ font-weight:400; }
@@ -316,8 +316,8 @@ hr{ border:none; border-top:1px solid var(--laca-borde); margin:16px 0; }
 .cobro-row .inp{ margin:3px 0; }
 .cobro-row select.inp{ grid-column:2; }
 .cobro-check{ text-align:center; font-size:.85rem; font-weight:600; padding:6px; border-radius:6px; margin-top:6px; }
-.cobro-check.ok{ background:var(--verde-bg); color:#7fdc8a; }
-.cobro-check.falta{ background:var(--rojo-bg); color:#f0a0a3; }
+.cobro-check.ok{ background:var(--verde-bg); color:var(--verde); }
+.cobro-check.falta{ background:var(--rojo-bg); color:var(--rojo-al); }
 .cobro-check.sobra{ background:var(--amar-bg); color:var(--amar); }
 
 /* ==========================================================================
@@ -336,9 +336,9 @@ hr{ border:none; border-top:1px solid var(--laca-borde); margin:16px 0; }
 .kds-head{ display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
 .kds-orden{ font-family:'Noto Serif SC',serif; font-weight:900; font-size:1.4rem; color:var(--oro); }
 .kds-timer{ font-weight:700; font-size:.95rem; padding:3px 10px; border-radius:14px; font-variant-numeric:tabular-nums; }
-.kds-timer.verde{ background:var(--verde-bg); color:#7fdc8a; }
+.kds-timer.verde{ background:var(--verde-bg); color:var(--verde); }
 .kds-timer.amarillo{ background:var(--amar-bg); color:var(--amar); }
-.kds-timer.rojo{ background:var(--rojo-bg); color:#f0a0a3; }
+.kds-timer.rojo{ background:var(--rojo-bg); color:var(--rojo-al); }
 .kds-dest{ font-weight:700; color:var(--texto); margin-bottom:8px; font-size:.95rem; }
 .kds-aviso{ background:var(--oro); color:#1a0f0f; font-weight:800; text-align:center;
   padding:6px; border-radius:6px; margin-bottom:8px; font-size:.85rem; animation:pulseRojo 1.2s infinite; }
@@ -372,14 +372,14 @@ hr{ border:none; border-top:1px solid var(--laca-borde); margin:16px 0; }
 .pend-item{ display:flex; justify-content:space-between; align-items:center; padding:8px 0;
   border-bottom:1px solid var(--laca-borde); font-size:.9rem; }
 .caja-acciones,.rep-acc{ display:flex; gap:12px; justify-content:flex-end; flex-wrap:wrap; }
-.alerta-pend{ background:var(--amar-bg); border:1px solid #5c4a15; color:var(--amar);
+.alerta-pend{ background:var(--amar-bg); border:1px solid #e6d18a; color:var(--amar);
   padding:12px; border-radius:8px; margin-bottom:14px; font-size:.85rem; }
 .alerta-pend ul{ margin:6px 0 0 18px; }
 .dif-preview{ text-align:center; font-size:1.2rem; font-weight:800; padding:10px; border-radius:8px;
   min-height:20px; margin:6px 0; }
-.dif-preview.verde{ background:var(--verde-bg); color:#7fdc8a; }
+.dif-preview.verde{ background:var(--verde-bg); color:var(--verde); }
 .dif-preview.amar{ background:var(--amar-bg); color:var(--amar); }
-.dif-preview.rojo{ background:var(--rojo-bg); color:#f0a0a3; }
+.dif-preview.rojo{ background:var(--rojo-bg); color:var(--rojo-al); }
 .diag-resumen{ font-size:.86rem; line-height:1.9; margin-bottom:14px; }
 .diag-resumen b{ color:var(--oro-suave); }
 .diag-nota{ color:var(--texto-3); font-style:italic; }
@@ -395,7 +395,7 @@ hr{ border:none; border-top:1px solid var(--laca-borde); margin:16px 0; }
 .kpi-val{ font-size:1.8rem; font-weight:800; color:var(--oro); font-variant-numeric:tabular-nums;
   font-family:'Noto Serif SC',serif; }
 .kpi-lbl{ font-size:.82rem; color:var(--texto-2); margin-top:4px; }
-.dash-alerta{ background:var(--amar-bg); border:1px solid #5c4a15; color:var(--amar);
+.dash-alerta{ background:var(--amar-bg); border:1px solid #e6d18a; color:var(--amar);
   padding:12px 16px; border-radius:8px; margin-bottom:18px; font-size:.88rem; }
 .dash-cols{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
 .grafico-barras{ display:flex; align-items:flex-end; gap:8px; height:180px; padding-top:10px; }
@@ -416,14 +416,14 @@ hr{ border:none; border-top:1px solid var(--laca-borde); margin:16px 0; }
 .cfg-nota{ font-size:.8rem; color:var(--texto-3); margin-top:12px; font-style:italic; }
 .fila-agotado{ opacity:.55; }
 .tag-agotado{ background:var(--rojo); color:#fff; font-size:.7rem; padding:2px 8px; border-radius:4px; font-weight:700; }
-.tag-ok{ background:var(--verde-bg); color:#7fdc8a; font-size:.7rem; padding:2px 8px; border-radius:4px; }
+.tag-ok{ background:var(--verde-bg); color:var(--verde); font-size:.7rem; padding:2px 8px; border-radius:4px; }
 
 /* ==========================================================================
    TOAST
    ========================================================================== */
 .toast{ position:fixed; bottom:24px; left:50%; transform:translateX(-50%) translateY(100px);
   background:var(--laca-2); color:var(--texto); padding:14px 22px; border-radius:12px;
-  border:1px solid var(--oro); box-shadow:0 8px 30px rgba(0,0,0,.6); font-weight:600; font-size:.9rem;
+  border:1px solid var(--oro); box-shadow:0 8px 30px rgba(90,60,20,.25); font-weight:600; font-size:.9rem;
   z-index:200; opacity:0; transition:transform .3s, opacity .3s; max-width:90vw; text-align:center; }
 .toast.show{ transform:translateX(-50%) translateY(0); opacity:1; }
 
